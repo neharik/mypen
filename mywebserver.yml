@@ -15,7 +15,7 @@
     when: ansible_os_family=="Debian"  
 
   - name: install webserver on redhat
-    apt: 
+    yum: 
       name: httpd
       state: present
     when: ansible_os_family=="redHat"
