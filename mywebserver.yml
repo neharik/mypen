@@ -1,0 +1,16 @@
+---
+- hosts: all
+  become: all
+  tasks:
+  - name: install webserver on ubuntu
+    apt: 
+      name: apache2
+      state: present
+    when: ansible_os_family=="Debian"
+
+  - name: i want to start ubuntu webserver
+    service:
+      name: apache2
+      state: restarted
+    when: ansible_os_family=="Debian"  
+    
